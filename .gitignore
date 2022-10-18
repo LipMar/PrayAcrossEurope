@@ -1,0 +1,9 @@
+venv/
+.idea/
+.env
+media/
+static/
+templates/
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
