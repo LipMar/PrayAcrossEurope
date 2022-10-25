@@ -56,3 +56,5 @@ class Prayer(models.Model):
             church_img.thumbnail(output_size)
             church_img.save(self.church_img.path)
 
+class Counter(models.Model):
+    counter_img = models.ImageField(blank = True, upload_to = 'counter_pcs')
