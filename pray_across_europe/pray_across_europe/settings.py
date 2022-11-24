@@ -149,3 +149,24 @@ EMAIL_HOST_PASSWORD = str(os.getenv('EMAIL_HOST_PASSWORD'))
 
 # Custom setting. To email
 RECIPIENT_ADDRESS = str(os.getenv('RECIPIENT_ADDRESS'))
+
+DEBUG_LOG_DIR = '/var/log/app_logs/django_debug.log'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': DEBUG_LOG_DIR,
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
