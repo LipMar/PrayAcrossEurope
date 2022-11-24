@@ -58,3 +58,14 @@ class Prayer(models.Model):
 
 class Counter(models.Model):
     counter_img = models.ImageField(blank = True, upload_to = 'counter_pcs')
+'''
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+        counter_img = Image.open(self.counter_img.path)
+
+        if counter_img.height > 300 or counter_img.width > 300:
+            output_size = (300, 300)
+            counter_img.thumbnail(output_size)
+            counter_img.save(self.counter_img.path)
+'''

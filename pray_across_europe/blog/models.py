@@ -9,7 +9,8 @@ class Article(models.Model):
 
     title = models.CharField(max_length=250)
     sneak_peek = models.CharField(blank = True, max_length=300)
-    content = models.TextField()
+    content_pl = models.TextField(blank = True)
+    content_eng = models.TextField(blank = True)
     date_posted = models.DateTimeField(default = datetime.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     blog_img = models.ImageField(blank = True, upload_to = 'blog_pcs')
