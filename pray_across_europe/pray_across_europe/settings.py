@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-=*3z(+jd8^%=z9a)a9pyk1u!3cu6%84pglk@b9b45j%%lt0ycs
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pray-across-europe-dev.eu-west-1.elasticbeanstalk.com']
 
 
 # Application definition
@@ -81,15 +81,22 @@ WSGI_APPLICATION = 'pray_across_europe.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+#
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'pray_across_europe',
+#         'USER' : str(os.getenv('USER')), #'postgres',
+#         'PASSWORD' : str(os.getenv('PASSWORD')), #os.environ('Key') nie działało
+#         'HOST' : str(os.getenv('HOST')),
+#         'PORT' :'5432'
+#     }
+# }
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'pray_across_europe',
-        'USER' : str(os.getenv('USER')), #'postgres',
-        'PASSWORD' : str(os.getenv('PASSWORD')), #os.environ('Key') nie działało
-        'HOST' : str(os.getenv('HOST')),
-        'PORT' :'5432'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -149,24 +156,3 @@ EMAIL_HOST_PASSWORD = str(os.getenv('EMAIL_HOST_PASSWORD'))
 
 # Custom setting. To email
 RECIPIENT_ADDRESS = str(os.getenv('RECIPIENT_ADDRESS'))
-
-DEBUG_LOG_DIR = '/var/log/app_logs/django_debug.log'
-
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'file': {
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': DEBUG_LOG_DIR,
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['file'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-    },
-}
