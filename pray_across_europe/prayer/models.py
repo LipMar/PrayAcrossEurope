@@ -39,6 +39,7 @@ class Prayer(models.Model):
     church_img = models.ImageField(blank = True, upload_to = 'church_img_pcs')
     church = models.ForeignKey(Church, on_delete = models.DO_NOTHING, blank = True, null = True) #jesli 3 wersje jezykowe to osobna klasa a tutaj church_description jako foreign key)
 
+
     def __str__(self):
         return self.country.country_pl
 
