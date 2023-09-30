@@ -1,0 +1,44 @@
+{% extends 'core/base.html' %}
+{% load static}
+{% block content %}
+
+<!-- Call to Action-->
+<section class="content-section bg-primary text-white">
+    <div class="container px-4 px-lg-5 text-center">
+        <h1 class="mb-4">Pray Across Europe</h1>
+        <small>Modlitwa o nawrócenie krajow Europy</small>
+        <br>
+        <br>
+        <div class="media-body">
+            <div class="article-metadata">
+                <div class=thumbinner>
+                    <img class="flag" class=thumbinner src="{{prayer.flag.url}}"/>
+                </div>
+                <br>
+                <h2 class="mr-2" href="#"><font color='white'>{{prayer.country.country_pl}}/{{prayer.country.country_eng}}/{{prayer.country.country_local}}</font>
+                </h2>
+                <br>
+                <h6 class="text-muted"><font color='white'>{{today_date}}</font></h6>
+            </div>
+
+            <div>
+                <p class="lead mb-5" style='text-align: justify'><font color='white' size='4'>{{prayer.prayer_text.prayer_text_pl}}</font>
+                </p>
+                <p class="lead mb-5" style='text-align: justify'><font color='white' size='4'>{{prayer.prayer_text.prayer_text_eng}}</font>
+                </p>
+                <p class="lead mb-5" style='text-align: justify'><font color='white' size='4'>{{prayer.prayer_text.prayer_text_local}}</font>
+                </p>
+            </div>
+            <div>
+                <img class="church" src="{{prayer.church_img.url}}">
+                <br>
+                <small>{{prayer.church.church_pl}} / {{prayer.church.church_eng}} /
+                    {{prayer.church.church_local}}</small>
+                <br>
+                <br>
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

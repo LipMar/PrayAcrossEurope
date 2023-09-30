@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Services-->
+        <section class="content-section bg-primary text-white text-center" id="documents">
+            <div class="container px-4 px-lg-5">
+                <div>
+                    <h2 class="mb-4"><font color = "#FFD700">Dokumenty do pobrania</font></h2>
+                    <h2 class="mb-5"></h2>
+                </div>
+                <div class="row gx-4 gx-lg-5">
+
+
+                    {% for document in object_list %}
+                    <div class="col-lg-6 col-md-6 mb-5 mb-md-0">
+                        <img class="icon" src="{{document.icon.url}}" />
+                        <!--<span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-like"></i></span>-->
+
+                        <h5><a  href="{{ document.download_file.url }}" download><font color ='white'>{{document.name}}</font></a></h5>
+
+                    </div>
+                    {%endfor%}
+            </div>
+        </div>
+    </section>
+{%endblock%}

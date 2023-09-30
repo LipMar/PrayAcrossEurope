@@ -1,0 +1,41 @@
+{% extends 'core/base.html' %}
+{% load static}
+{% block content %}
+
+
+<img src="/media/counter_pcs/wooden-cross-and-rosary-high-angle.jpg" style="height:100%;" >
+<div class="container" >
+
+  <div class="text-block px-4 px-lg-5 text-center">
+    <h2 class="mb-4">Tegoroczna pielgrzymka zakończyła się 13 października.</h2>
+           <h4 class="mb-4"> Do rozpoczęcia kolejnej pielgrzymki zostało:</h4>
+        {% if remaining_days == 1 %}
+        <h2><font color = "#FFD700">{{remaining_days}} dzień</font></h2>
+        {% else %}
+        <h2><font color = "#FFD700">{{remaining_days}} dni</font></h2>
+        {% endif %}
+  </div>
+</div>
+</section>
+
+
+<!--
+
+<section class="content-section bg-primary text-white">
+
+
+    <div class="container px-4 px-lg-5 text-center">
+        <img src="/media/counter_pcs/rosary-cathloic-cross-isolated-white-background_1_QANcQl3.jpg"/>
+           <h2 class="mb-4">Tegoroczna pielgrzymka zakończyła się 13 października.</h2>
+           <h4 class="mb-4"> Do rozpoczęcia kolejnej pielgrzymki zostało:</h4>
+        {% if remaining_days == 1 %}
+        <h2><font color = "#FFD700">{{remaining_days}} dzień</font></h2>
+        {% else %}
+        <h2><font color = "#FFD700">{{remaining_days}} dni</font></h2>
+        {% endif %}
+
+    </div>
+    </div>
+</section>
+{% endblock %}
+-->

@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+
+    <section class="content-section bg-light" >
+
+        <link rel="stylesheet" type = "text/css" href="{% static 'blog/base.css' %}"  />
+            <div class="container px-4 px-lg-5 text-center">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-10">
+                        <h2 class="article-title">{{object.title }}</h2>
+                        <p class="lead mb-5" style="text-align: justify"><img class="blog" src="{{article.blog_img.url}}"/><font size="4">{{ object.content_pl }}<br>{{object.content_eng}}</font></p><br>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+{% endblock %}
