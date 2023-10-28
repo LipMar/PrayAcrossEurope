@@ -11607,8 +11607,9 @@ width:100%;
 /* Bottom right text */
 .text-block {
   position: absolute;
-  bottom: 400px;
-  right: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: transparent;
   color: white;
   padding-left: 20px;
