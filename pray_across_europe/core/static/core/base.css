@@ -11482,7 +11482,7 @@ footer.footer .social-link:hover {
   }
 }
 .masthead {
-  min-height: 30rem;
+  min-height: 100vh;
   position: relative;
   display: table;
   width: 100%;
@@ -11494,6 +11494,7 @@ footer.footer .social-link:hover {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.masthead h1, .masthead .h1 {
 .masthead h1, .masthead .h1 {
   font-size: 4rem;
   margin: 0;
@@ -11607,9 +11608,8 @@ width:100%;
 /* Bottom right text */
 .text-block {
   position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -270%);
+  bottom: 400px;
+  right: 100px;
   background-color: transparent;
   color: white;
   padding-left: 20px;
@@ -11626,4 +11626,16 @@ width:100%;
   padding-left: 20px;
   padding-right: 20px;
   }
+}
+
+header.masthead2 {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-top: calc(8rem + 57px);
+  padding-bottom: 8rem;
+  background: no-repeat center center;
+  background-image: url('assets/img/blog_background.jpg');
+  background-size: cover;
+  background-attachment: scroll;
+  height: 80%;
 }

@@ -3,5 +3,5 @@ from . import views
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path('prayer/', views.prayer, name = 'prayer'),
+    path('', views.prayer, name = 'prayer'),
 ]
